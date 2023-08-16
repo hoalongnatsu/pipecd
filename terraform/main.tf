@@ -1,16 +1,17 @@
 terraform {
   backend "s3" {
-    bucket         = "pipecd-s3-backend"
-    key            = "pipecd"
-    region         = "ap-southeast-1"
-    encrypt        = true
-    role_arn       = "arn:aws:iam::128937018484:role/PipecdS3BackendRole"
-    dynamodb_table = "pipecd-s3-backend"
+    bucket                   = "pipecd-s3-backend"
+    key                      = "pipecd"
+    region                   = "ap-southeast-1"
+    encrypt                  = true
+    role_arn                 = "arn:aws:iam::128937018484:role/PipecdS3BackendRole"
+    dynamodb_table           = "pipecd-s3-backend"
+    shared_credentials_files = ["/etc/piped-secret/credentials"]
   }
 }
 
 provider "aws" {
-  region = "ap-southeast-1"
+  region                   = "ap-southeast-1"
   shared_credentials_files = ["/etc/piped-secret/credentials"]
 }
 
