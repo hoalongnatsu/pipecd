@@ -4,8 +4,3 @@ spec:
   name: dev
   labels:
     team: infra
-  encryption:
-    encryptedSecrets:
-      creds: 
-    decryptionTargets:
-      - .aws/creds
