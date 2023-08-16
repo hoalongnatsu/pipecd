@@ -1,6 +1,6 @@
 provider "aws" {
   region = "ap-southeast-1"
-  shared_credentials_files = [".aws/creds"]
+  shared_credentials_files = ["/etc/piped-secret/credentials"]
 }
 
 data "aws_ami" "ubuntu" {
